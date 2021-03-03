@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GildedRoseKata.Items.Extensions;
+using System.Collections.Generic;
 
 namespace GildedRoseKata
 {
@@ -13,32 +14,18 @@ namespace GildedRoseKata
 
         public void UpdateQuality()
         {
-            foreach (var item in _items)
-            {
-                if (item is IUpdatable updatableItem)
-                {
-                    updatableItem.Update();
-                }
-                else
-                {
-                    // unknown types
-                    UpdateGeneralItems(item);
-                }
-            }
-        }
+            // Ideally people using this code, would pass all classes
+            // implementing IUpdatable interface (can't enforce this atm because
+            // not allowed to change Item class and _items field)
 
-        private void UpdateGeneralItems(Item item)
-        {
-            if (item.Quality > 0)
-            {
-                item.Quality -= 1;
-            }
+            // If not possible to enforce and change the calling code at all,
+            // this should be a place to map Items them based on Name :(
 
-            item.SellIn -= 1;
+            var updatableItems = _items.MapToUpdatable();
 
-            if (item.SellIn < 0 && item.Quality > 0)
+            foreach (var updatableItem in updatableItems)
             {
-                item.Quality -= 1;
+                updatableItem.Update();
             }
         }
     }
