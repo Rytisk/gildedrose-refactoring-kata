@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRoseKata.App", "GildedRoseKata.App\GildedRoseKata.App.csproj", "{CDDD77A9-5AD0-4894-8141-EEEAF1337F1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseKata", "GildedRoseKata.Core\GildedRoseKata.csproj", "{AE56F8CC-09B5-467B-8BC0-E38CB65ABCB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseKata", "GildedRoseKata\GildedRoseKata.csproj", "{AE56F8CC-09B5-467B-8BC0-E38CB65ABCB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseKata.Tests", "GildedRoseKata.Tests\GildedRoseKata.Tests.csproj", "{97F30E7B-339A-43B2-BBF2-137AC61AD2DE}"
 EndProject

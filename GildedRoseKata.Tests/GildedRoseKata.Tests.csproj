@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GildedRoseKata.App\GildedRoseKata.App.csproj" />
-    <ProjectReference Include="..\GildedRoseKata.Core\GildedRoseKata.csproj" />
+    <ProjectReference Include="..\GildedRoseKata\GildedRoseKata.csproj" />
   </ItemGroup>
 
 </Project>

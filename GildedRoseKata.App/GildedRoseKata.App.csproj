@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GildedRoseKata.Core\GildedRoseKata.csproj" />
+    <ProjectReference Include="..\GildedRoseKata\GildedRoseKata.csproj" />
   </ItemGroup>
 </Project>
