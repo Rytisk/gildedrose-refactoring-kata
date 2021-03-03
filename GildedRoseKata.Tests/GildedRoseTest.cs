@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using GildedRoseKata.Items;
+using Xunit;
 
 namespace GildedRoseKata.Tests
 {
@@ -11,12 +12,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 20;
 
-            var item = new Item 
-            {
-                Name = "+5 Dexterity Vest",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DexterityVestItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -34,12 +30,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 20;
 
-            var item = new Item
-            {
-                Name = "+5 Dexterity Vest",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DexterityVestItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -57,12 +48,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 0;
             var quality = 20;
 
-            var item = new Item
-            {
-                Name = "+5 Dexterity Vest",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DexterityVestItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -80,12 +66,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 0;
 
-            var item = new Item
-            {
-                Name = "+5 Dexterity Vest",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DexterityVestItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -103,12 +84,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 10;
 
-            var item = new Item
-            {
-                Name = "Aged Brie",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new AgedBrieItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -126,12 +102,7 @@ namespace GildedRoseKata.Tests
             var sellIn = 0;
             var quality = 10;
 
-            var item = new Item
-            {
-                Name = "Aged Brie",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new AgedBrieItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -174,12 +145,7 @@ namespace GildedRoseKata.Tests
             var quality = 80;
             var sellIn = 10;
 
-            var item = new Item
-            {
-                Name = "Sulfuras, Hand of Ragnaros",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new SulfurasItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -197,12 +163,7 @@ namespace GildedRoseKata.Tests
             var quality = 80;
             var sellIn = 10;
 
-            var item = new Item
-            {
-                Name = "Sulfuras, Hand of Ragnaros",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new SulfurasItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -220,12 +181,7 @@ namespace GildedRoseKata.Tests
         public void ShouldIncreaseBackstagePassQuality(int sellIn, int quality, int expectedQuality)
         {
             // arrange
-            var item = new Item
-            {
-                Name = "Backstage passes to a TAFKAL80ETC concert",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new BackstagePassItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -242,12 +198,7 @@ namespace GildedRoseKata.Tests
         public void ShouldResetBackstagePassQualityIfExpired(int sellIn, int quality, int expectedQuality)
         {
             // arrange
-            var item = new Item
-            {
-                Name = "Backstage passes to a TAFKAL80ETC concert",
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new BackstagePassItem(sellIn, quality);
 
             var gildedRose = new GildedRose(new[] { item });
 
