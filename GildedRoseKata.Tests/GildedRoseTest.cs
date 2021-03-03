@@ -166,5 +166,31 @@ namespace GildedRoseKata.Tests
             // assert
             Assert.Equal(sellIn, item.SellIn);
         }
+
+        [Theory]
+        [InlineData(15, 50, 50)]
+        [InlineData(11, 0, 1)]
+        [InlineData(10, 0, 2)]
+        [InlineData(5, 0, 3)]
+        [InlineData(0, 10, 0)]
+        [InlineData(-1, 10, 0)]
+        public void ShouldIncreaseBackstagePassQuality(int sellIn, int quality, int expectedQuality)
+        {
+            // arrange
+            var item = new Item
+            {
+                Name = "Backstage passes to a TAFKAL80ETC concert",
+                SellIn = sellIn,
+                Quality = quality
+            };
+
+            var gildedRose = new GildedRose(new[] { item });
+
+            // act
+            gildedRose.UpdateQuality();
+
+            // assert
+            Assert.Equal(expectedQuality, item.Quality);
+        }
     }
 }
