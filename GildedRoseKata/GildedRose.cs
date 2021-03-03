@@ -4,11 +4,11 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
-        private IList<Item> _items;
+        private readonly IList<Item> _items;
 
-        public GildedRose(IList<Item> Items)
+        public GildedRose(IList<Item> items)
         {
-            _items = Items;
+            _items = items;
         }
 
         private void UpdateAgedBrie(Item item)
@@ -68,27 +68,27 @@ namespace GildedRoseKata
 
         public void UpdateQuality()
         {
-            for (var i = 0; i < _items.Count; i++)
+            foreach (var item in _items)
             {
-                if (_items[i].Name == "Aged Brie")
+                if (item.Name == "Aged Brie")
                 {
-                    UpdateAgedBrie(_items[i]);
+                    UpdateAgedBrie(item);
 
                     continue;
                 }
-                else if (_items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    UpdateBackstagePasses(_items[i]);
+                    UpdateBackstagePasses(item);
 
                     continue;
                 }
-                else if (_items[i].Name == "Sulfuras, Hand of Ragnaros")
+                else if (item.Name == "Sulfuras, Hand of Ragnaros")
                 {
                     continue;
                 }
                 else
                 {
-                    UpdateGeneralItems(_items[i]);
+                    UpdateGeneralItems(item);
                 }
                 
             }
