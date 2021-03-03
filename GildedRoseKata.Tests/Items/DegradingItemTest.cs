@@ -12,11 +12,7 @@ namespace GildedRoseKata.Tests.Items
             var sellIn = 10;
             var quality = 20;
 
-            var item = new DegradingItem
-            {
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DegradingItem("item", sellIn, quality);
 
             // act
             item.Update();
@@ -32,11 +28,7 @@ namespace GildedRoseKata.Tests.Items
             var sellIn = 10;
             var quality = 20;
 
-            var item = new DegradingItem
-            {
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DegradingItem("item", sellIn, quality);
 
             // act
             item.Update();
@@ -52,11 +44,7 @@ namespace GildedRoseKata.Tests.Items
             var sellIn = 0;
             var quality = 20;
 
-            var item = new DegradingItem
-            {
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DegradingItem("item", sellIn, quality);
 
             // act
             item.Update();
@@ -72,11 +60,7 @@ namespace GildedRoseKata.Tests.Items
             var sellIn = 10;
             var quality = 0;
 
-            var item = new DegradingItem
-            {
-                SellIn = sellIn,
-                Quality = quality
-            };
+            var item = new DegradingItem("item", sellIn, quality);
 
             // act
             item.Update();
