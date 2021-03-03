@@ -51,6 +51,21 @@ namespace GildedRoseKata
             }
         }
 
+        private void UpdateGeneralItems(Item item)
+        {
+            if (item.Quality > 0)
+            {
+                item.Quality -= 1;
+            }
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0 && item.Quality > 0)
+            {
+                item.Quality -= 1;
+            }
+        }
+
         public void UpdateQuality()
         {
             for (var i = 0; i < _items.Count; i++)
@@ -67,30 +82,15 @@ namespace GildedRoseKata
 
                     continue;
                 }
-
-                if (_items[i].Quality > 0)
+                else if (_items[i].Name == "Sulfuras, Hand of Ragnaros")
                 {
-                    if (_items[i].Name != "Sulfuras, Hand of Ragnaros")
-                    {
-                        _items[i].Quality = _items[i].Quality - 1;
-                    }
+                    continue;
                 }
-
-                if (_items[i].Name != "Sulfuras, Hand of Ragnaros")
+                else
                 {
-                    _items[i].SellIn = _items[i].SellIn - 1;
+                    UpdateGeneralItems(_items[i]);
                 }
-
-                if (_items[i].SellIn < 0)
-                {
-                    if (_items[i].Quality > 0)
-                    {
-                        if (_items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            _items[i].Quality = _items[i].Quality - 1;
-                        }
-                    }
-                }
+                
             }
         }
     }
