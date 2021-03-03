@@ -142,8 +142,10 @@ namespace GildedRoseKata.Tests
             Assert.Equal(quality + 2, item.Quality);
         }
 
-        [Fact]
-        public void ShouldNotIncreaseQualityAboveMaximum()
+        [Theory]
+        [InlineData("Aged Brie")]
+        [InlineData("Backstage passes to a TAFKAL80ETC concert")]
+        public void ShouldNotIncreaseQualityAboveMaximum(string name)
         {
             // arrange
             var maximumQuality = 50;
@@ -151,7 +153,7 @@ namespace GildedRoseKata.Tests
 
             var item = new Item
             {
-                Name = "Aged Brie",
+                Name = name,
                 SellIn = sellIn,
                 Quality = maximumQuality
             };
@@ -212,13 +214,32 @@ namespace GildedRoseKata.Tests
         }
 
         [Theory]
-        [InlineData(15, 50, 50)]
         [InlineData(11, 0, 1)]
         [InlineData(10, 0, 2)]
         [InlineData(5, 0, 3)]
+        public void ShouldIncreaseBackstagePassQuality(int sellIn, int quality, int expectedQuality)
+        {
+            // arrange
+            var item = new Item
+            {
+                Name = "Backstage passes to a TAFKAL80ETC concert",
+                SellIn = sellIn,
+                Quality = quality
+            };
+
+            var gildedRose = new GildedRose(new[] { item });
+
+            // act
+            gildedRose.UpdateQuality();
+
+            // assert
+            Assert.Equal(expectedQuality, item.Quality);
+        }
+
+        [Theory]
         [InlineData(0, 10, 0)]
         [InlineData(-1, 10, 0)]
-        public void ShouldIncreaseBackstagePassQuality(int sellIn, int quality, int expectedQuality)
+        public void ShouldResetBackstagePassQualityIfExpired(int sellIn, int quality, int expectedQuality)
         {
             // arrange
             var item = new Item
