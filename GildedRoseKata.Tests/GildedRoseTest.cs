@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace GildedRoseKata.Tests
 {
@@ -12,7 +11,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 20;
 
-            var item = new Item { Name = "+5 Dexterity Vest", SellIn = sellIn, Quality = quality };
+            var item = new Item 
+            {
+                Name = "+5 Dexterity Vest",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -30,7 +34,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 20;
 
-            var item = new Item { Name = "+5 Dexterity Vest", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "+5 Dexterity Vest",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -48,7 +57,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 0;
             var quality = 20;
 
-            var item = new Item { Name = "+5 Dexterity Vest", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "+5 Dexterity Vest",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -66,7 +80,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 0;
 
-            var item = new Item { Name = "+5 Dexterity Vest", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "+5 Dexterity Vest",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -84,7 +103,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 10;
             var quality = 10;
 
-            var item = new Item { Name = "Aged Brie", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "Aged Brie",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -102,7 +126,12 @@ namespace GildedRoseKata.Tests
             var sellIn = 0;
             var quality = 10;
 
-            var item = new Item { Name = "Aged Brie", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "Aged Brie",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -120,7 +149,12 @@ namespace GildedRoseKata.Tests
             var maximumQuality = 50;
             var sellIn = 10;
 
-            var item = new Item { Name = "Aged Brie", SellIn = sellIn, Quality = maximumQuality };
+            var item = new Item
+            {
+                Name = "Aged Brie",
+                SellIn = sellIn,
+                Quality = maximumQuality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -138,7 +172,12 @@ namespace GildedRoseKata.Tests
             var quality = 80;
             var sellIn = 10;
 
-            var item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "Sulfuras, Hand of Ragnaros",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
@@ -156,7 +195,12 @@ namespace GildedRoseKata.Tests
             var quality = 80;
             var sellIn = 10;
 
-            var item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellIn, Quality = quality };
+            var item = new Item
+            {
+                Name = "Sulfuras, Hand of Ragnaros",
+                SellIn = sellIn,
+                Quality = quality
+            };
 
             var gildedRose = new GildedRose(new[] { item });
 
