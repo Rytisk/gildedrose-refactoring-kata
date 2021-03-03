@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GildedRoseKata.Items
+﻿namespace GildedRoseKata.Items
 {
     public class SulfurasItem : Item
     {
+        public SulfurasItem(int sellIn, int quality)
+        {
+            SellIn = sellIn;
+            Quality = quality;
+            Name = "Sulfuras, Hand of Ragnaros";
+        }
     }
 }
