@@ -3,10 +3,8 @@
     public class ElixirOfMongooseItem : DegradingItem
     {
         public ElixirOfMongooseItem(int sellIn, int quality)
+            : base("Elixir of the Mongoose", sellIn, quality)
         {
-            SellIn = sellIn;
-            Quality = quality;
-            Name = "Elixir of the Mongoose";
         }
     }
 }

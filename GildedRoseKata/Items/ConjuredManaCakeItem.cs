@@ -3,10 +3,8 @@
     public class ConjuredManaCakeItem : DegradingItem
     {
         public ConjuredManaCakeItem(int sellIn, int quality)
+            : base("Conjured Mana Cake", sellIn, quality)
         {
-            SellIn = sellIn;
-            Quality = quality;
-            Name = "Conjured Mana Cake";
         }
     }
 }

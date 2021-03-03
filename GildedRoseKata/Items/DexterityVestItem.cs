@@ -3,10 +3,8 @@
     public class DexterityVestItem : DegradingItem
     {
         public DexterityVestItem(int sellIn, int quality)
+            : base("+5 Dexterity Vest", sellIn, quality)
         {
-            SellIn = sellIn;
-            Quality = quality;
-            Name = "+5 Dexterity Vest";
         }
     }
 }
