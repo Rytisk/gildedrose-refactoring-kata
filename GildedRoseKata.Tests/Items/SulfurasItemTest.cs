@@ -14,10 +14,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new SulfurasItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality, item.Quality);
@@ -32,10 +30,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new SulfurasItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(sellIn, item.SellIn);

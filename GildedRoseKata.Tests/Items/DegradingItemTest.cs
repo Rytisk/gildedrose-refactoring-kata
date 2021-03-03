@@ -18,10 +18,8 @@ namespace GildedRoseKata.Tests.Items
                 Quality = quality
             };
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(sellIn - 1, item.SellIn);
@@ -40,10 +38,8 @@ namespace GildedRoseKata.Tests.Items
                 Quality = quality
             };
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality - 1, item.Quality);
@@ -62,10 +58,8 @@ namespace GildedRoseKata.Tests.Items
                 Quality = quality
             };
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality - 2, item.Quality);
@@ -84,10 +78,8 @@ namespace GildedRoseKata.Tests.Items
                 Quality = quality
             };
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality, item.Quality);

@@ -14,10 +14,8 @@ namespace GildedRoseKata.Tests.Items
             // arrange
             var item = new BackstagePassItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(expectedQuality, item.Quality);
@@ -31,10 +29,8 @@ namespace GildedRoseKata.Tests.Items
             // arrange
             var item = new BackstagePassItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(expectedQuality, item.Quality);
@@ -49,10 +45,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new BackstagePassItem(sellIn, maximumQuality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(maximumQuality, item.Quality);

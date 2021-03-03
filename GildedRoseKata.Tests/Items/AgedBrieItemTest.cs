@@ -14,10 +14,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new AgedBrieItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality + 1, item.Quality);
@@ -32,10 +30,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new AgedBrieItem(sellIn, quality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(quality + 2, item.Quality);
@@ -50,10 +46,8 @@ namespace GildedRoseKata.Tests.Items
 
             var item = new AgedBrieItem(sellIn, maximumQuality);
 
-            var gildedRose = new GildedRose(new[] { item });
-
             // act
-            gildedRose.UpdateQuality();
+            item.Update();
 
             // assert
             Assert.Equal(maximumQuality, item.Quality);
