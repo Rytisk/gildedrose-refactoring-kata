@@ -11,43 +11,19 @@ namespace GildedRoseKata
             _items = items;
         }
 
-        private void UpdateAgedBrie(Item item)
+        public void UpdateQuality()
         {
-            if (item.Quality < 50)
+            foreach (var item in _items)
             {
-                item.Quality += 1;
-            }
-
-            item.SellIn -= 1;
-
-            if (item.SellIn < 0 && item.Quality < 50)
-            {
-                item.Quality += 1;
-            }
-        }
-
-        private void UpdateBackstagePasses(Item item)
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality += 1;
-
-                if (item.SellIn < 11 && item.Quality < 50)
+                if (item is IUpdatable updatableItem)
                 {
-                    item.Quality += 1;
+                    updatableItem.Update();
                 }
-
-                if (item.SellIn < 6 && item.Quality < 50)
+                else
                 {
-                    item.Quality += 1;
+                    // unknown types
+                    UpdateGeneralItems(item);
                 }
-            }
-
-            item.SellIn -= 1;
-
-            if (item.SellIn < 0)
-            {
-                item.Quality -= item.Quality;
             }
         }
 
@@ -63,34 +39,6 @@ namespace GildedRoseKata
             if (item.SellIn < 0 && item.Quality > 0)
             {
                 item.Quality -= 1;
-            }
-        }
-
-        public void UpdateQuality()
-        {
-            foreach (var item in _items)
-            {
-                if (item.Name == "Aged Brie")
-                {
-                    UpdateAgedBrie(item);
-
-                    continue;
-                }
-                else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    UpdateBackstagePasses(item);
-
-                    continue;
-                }
-                else if (item.Name == "Sulfuras, Hand of Ragnaros")
-                {
-                    continue;
-                }
-                else
-                {
-                    UpdateGeneralItems(item);
-                }
-                
             }
         }
     }
