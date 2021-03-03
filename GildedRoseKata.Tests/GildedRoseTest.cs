@@ -1,7 +1,7 @@
 ﻿using Xunit;
 using System.Collections.Generic;
 
-namespace GildedRoseKata
+namespace GildedRoseKata.Tests
 {
     public class GildedRoseTest
     {
