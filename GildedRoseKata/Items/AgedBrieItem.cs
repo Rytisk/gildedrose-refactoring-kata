@@ -1,5 +1,4 @@
-﻿using GildedRoseKata.Constants;
-using static GildedRoseKata.Constants.ItemConstants;
+﻿using static GildedRoseKata.Constants.ItemConstants;
 
 namespace GildedRoseKata.Items
 {
@@ -14,7 +13,7 @@ namespace GildedRoseKata.Items
 
         public void Update()
         {
-            if (Quality < ItemConstants.MaximumQuality)
+            if (Quality < MaximumQuality)
             {
                 Quality += 1;
             }
