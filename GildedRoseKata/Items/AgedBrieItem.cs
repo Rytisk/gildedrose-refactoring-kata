@@ -1,4 +1,7 @@
-﻿namespace GildedRoseKata.Items
+﻿using GildedRoseKata.Constants;
+using static GildedRoseKata.Constants.ItemConstants;
+
+namespace GildedRoseKata.Items
 {
     public class AgedBrieItem : Item, IUpdatable
     {
@@ -11,7 +14,7 @@
 
         public void Update()
         {
-            if (Quality < 50)
+            if (Quality < ItemConstants.MaximumQuality)
             {
                 Quality += 1;
             }

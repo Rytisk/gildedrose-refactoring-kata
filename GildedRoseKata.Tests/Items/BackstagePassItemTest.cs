@@ -1,5 +1,6 @@
 ﻿using GildedRoseKata.Items;
 using Xunit;
+using static GildedRoseKata.Constants.ItemConstants;
 
 namespace GildedRoseKata.Tests.Items
 {
@@ -40,16 +41,15 @@ namespace GildedRoseKata.Tests.Items
         public void ShouldNotIncreaseQualityAboveMaximum()
         {
             // arrange
-            var maximumQuality = 50;
             var sellIn = 10;
 
-            var item = new BackstagePassItem(sellIn, maximumQuality);
+            var item = new BackstagePassItem(sellIn, MaximumQuality);
 
             // act
             item.Update();
 
             // assert
-            Assert.Equal(maximumQuality, item.Quality);
+            Assert.Equal(MaximumQuality, item.Quality);
         }
     }
 }

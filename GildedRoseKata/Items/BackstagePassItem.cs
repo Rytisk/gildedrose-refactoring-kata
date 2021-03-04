@@ -1,4 +1,6 @@
-﻿namespace GildedRoseKata.Items
+﻿using static GildedRoseKata.Constants.ItemConstants;
+
+namespace GildedRoseKata.Items
 {
     public class BackstagePassItem : Item, IUpdatable
     {
@@ -11,16 +13,16 @@
 
         public void Update()
         {
-            if (Quality < 50)
+            if (Quality < MaximumQuality)
             {
                 Quality += 1;
 
-                if (SellIn < 11 && Quality < 50)
+                if (SellIn < 11 && Quality < MaximumQuality)
                 {
                     Quality += 1;
                 }
 
-                if (SellIn < 6 && Quality < 50)
+                if (SellIn < 6 && Quality < MaximumQuality)
                 {
                     Quality += 1;
                 }
