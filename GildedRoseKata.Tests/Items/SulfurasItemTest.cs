@@ -9,26 +9,24 @@ namespace GildedRoseKata.Tests.Items
         public void ShouldNotDegradeSulfurasQuality()
         {
             // arrange
-            var quality = 80;
             var sellIn = 10;
 
-            var item = new SulfurasItem(sellIn, quality);
+            var item = new SulfurasItem(sellIn);
 
             // act
             item.Update();
 
             // assert
-            Assert.Equal(quality, item.Quality);
+            Assert.Equal(80, item.Quality);
         }
 
         [Fact]
         public void ShouldNotAlterSulfurasSellInTime()
         {
             // arrange
-            var quality = 80;
             var sellIn = 10;
 
-            var item = new SulfurasItem(sellIn, quality);
+            var item = new SulfurasItem(sellIn);
 
             // act
             item.Update();

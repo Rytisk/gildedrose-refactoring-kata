@@ -20,7 +20,7 @@ namespace GildedRoseKata.Items
 
             SellIn -= 1;
 
-            if (SellIn < 0 && Quality < 50)
+            if (SellIn < 0 && Quality < MaximumQuality)
             {
                 Quality += 1;
             }

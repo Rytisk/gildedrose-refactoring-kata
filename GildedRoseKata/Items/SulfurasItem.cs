@@ -2,16 +2,17 @@
 {
     public class SulfurasItem : Item, IUpdatable
     {
-        public SulfurasItem(int sellIn, int quality)
+        private const int SulfurasQuality = 80;
+
+        public SulfurasItem(int sellIn)
         {
             SellIn = sellIn;
-            Quality = quality;
+            Quality = SulfurasQuality;
             Name = "Sulfuras, Hand of Ragnaros";
         }
 
         public void Update()
         {
-
         }
     }
 }
