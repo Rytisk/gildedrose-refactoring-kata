@@ -11,7 +11,7 @@ namespace GildedRoseKata.Tests
     [UseReporter(typeof(DiffReporter))]
     public class ApprovalTest
     {
-        [Fact]
+        [Fact (Skip = "I would remove this. But maybe you will use it?")]
         public void ThirtyDays()
         {
             var fakeoutput = new StringBuilder();

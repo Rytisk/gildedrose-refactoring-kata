@@ -23,7 +23,6 @@ namespace GildedRoseKata.App
                 new BackstagePassItem(15, 20),
                 new BackstagePassItem(10, 49),
                 new BackstagePassItem(5, 49),
-                // this conjured item does not work properly yet
                 new ConjuredManaCakeItem(3, 6)
             };
 
