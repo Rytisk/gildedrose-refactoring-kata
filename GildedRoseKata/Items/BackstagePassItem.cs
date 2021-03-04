@@ -13,26 +13,43 @@ namespace GildedRoseKata.Items
 
         public void Update()
         {
-            if (Quality < MaximumQuality)
-            {
-                Quality += 1;
-
-                if (SellIn < 11 && Quality < MaximumQuality)
-                {
-                    Quality += 1;
-                }
-
-                if (SellIn < 6 && Quality < MaximumQuality)
-                {
-                    Quality += 1;
-                }
-            }
+            UpdateQuality();
 
             SellIn -= 1;
 
+            ResetQualityWhenExpired();
+        }
+
+        private void UpdateQuality()
+        {
+            if (SellIn < 6)
+            {
+                IncreaseQualityBy(3);
+            }
+            else if (SellIn < 11)
+            {
+                IncreaseQualityBy(2);
+            }
+            else
+            {
+                IncreaseQualityBy(1);
+            }
+        }
+
+        private void IncreaseQualityBy(int value)
+        {
+            var increasedQuality = Quality + value;
+
+            Quality = increasedQuality > MaximumQuality
+                ? MaximumQuality
+                : increasedQuality;
+        }
+
+        private void ResetQualityWhenExpired()
+        {
             if (SellIn < 0)
             {
-                Quality -= Quality;
+                Quality = 0;
             }
         }
     }

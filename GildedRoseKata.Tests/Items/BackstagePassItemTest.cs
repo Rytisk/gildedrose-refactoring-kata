@@ -37,13 +37,15 @@ namespace GildedRoseKata.Tests.Items
             Assert.Equal(expectedQuality, item.Quality);
         }
 
-        [Fact]
-        public void ShouldNotIncreaseQualityAboveMaximum()
+        [Theory]
+        [InlineData(10, 50)]
+        [InlineData(10, 49)]
+        [InlineData(5, 50)]
+        [InlineData(5, 49)]
+        public void ShouldNotIncreaseQualityAboveMaximum(int sellIn, int quality)
         {
             // arrange
-            var sellIn = 10;
-
-            var item = new BackstagePassItem(sellIn, MaximumQuality);
+            var item = new BackstagePassItem(sellIn, quality);
 
             // act
             item.Update();
