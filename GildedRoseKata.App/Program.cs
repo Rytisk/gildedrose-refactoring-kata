@@ -10,7 +10,11 @@ namespace GildedRoseKata.App
         {
             Console.WriteLine("OMGHAI!");
 
-            var items = new List<Item>{
+            //TODO: Should create items through factory.
+            // The Factory method should validate that the invariants hold for the items
+            // (e.g. shouldn't create an item with quality above 50 unless a special case)
+
+            var items = new List<Item> {
                 new DexterityVestItem(10, 20),
                 new AgedBrieItem(2, 0),
                 new ElixirOfMongooseItem(5, 7),

@@ -20,6 +20,7 @@ namespace GildedRoseKata.Items
             ResetQualityWhenExpired();
         }
 
+        //TODO: Move magic numbers into constants
         private void UpdateQuality()
         {
             if (SellIn < 6)
