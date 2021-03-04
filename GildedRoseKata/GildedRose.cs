@@ -1,4 +1,4 @@
-﻿using GildedRoseKata.Items.Extensions;
+﻿using System;
 using System.Collections.Generic;
 
 namespace GildedRoseKata
@@ -18,14 +18,18 @@ namespace GildedRoseKata
             // implementing IUpdatable interface (can't enforce this atm because
             // not allowed to change Item class and _items field)
 
-            // If not possible to enforce and change the calling code at all,
-            // this should be a place to map Items them based on Name :(
-
-            var updatableItems = _items.MapToUpdatable();
-
-            foreach (var updatableItem in updatableItems)
+            foreach (var item in _items)
             {
-                updatableItem.Update();
+                if (item is IUpdatable updatableItem)
+                {
+                    updatableItem.Update();
+                }
+                else
+                {
+                    throw new ArgumentException(
+                        $"Unable to update item '{item.Name}': " +
+                        $"item does not implement {nameof(IUpdatable)} interface.");
+                }
             }
         }
     }
